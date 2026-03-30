@@ -32,7 +32,7 @@ async function create(params: UserCreationAttributes & { password: string }): Pr
     await db.User.create({
         ... params,
         passwordHash,
-        role: params.role || Role.User, // Default to User role
+        role: params.role || Role.User,
     } as UserCreationAttributes);
 }
 

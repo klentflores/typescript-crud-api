@@ -59,11 +59,11 @@ function createSchema(req: Request, res: Response, next: NextFunction): void {
 }
 
 function updateSchema(req: Request, res: Response, next: NextFunction): void {
-    const schema = Joi. object({
+    const schema = Joi.object({
         title: Joi.string().empty(''),
         firstName: Joi.string().empty(''),
-        LastName: Joi.string().empty(''),
-        role: Joi.string().valid(Role.Admin, Role.User). empty(''),
+        lastName: Joi.string().empty(''),
+        role: Joi.string().valid(Role.Admin, Role.User).empty(''),
         email: Joi.string().email().empty(''),
         password: Joi.string().min(6).empty(''),
         confirmPassword: Joi.string().valid(Joi.ref('password')).empty(''),
